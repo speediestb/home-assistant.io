@@ -296,38 +296,7 @@ While `command` is accepting a template for `sensor` and `binary_sensor`, it's o
 
 {% endnote %}
 
-### Using templates
-
-For incoming data a value template translates incoming JSON or raw data to a valid payload.
-Incoming payloads are rendered with possible JSON values, so when rendering, the `value_json` can be used to access the attributes in a JSON based payload, otherwise the `value` variable can be used for non-json based data.
-
-{% note %}
-
-**Example value template:**
-
-With given payload:
-
-```json
-{ "state": "ON", "temperature": 21.902 }
-```
-
-Template {% raw %}`{{ value_json.temperature | round(1) }}`{% endraw %} renders to `21.9`.
-
-Additional the entity attributes `entity_id`, `name` and `this` can be used as variables in the template. The `this` attribute refers to the [entity state](/docs/configuration/state_object) of the entity.
-
-{% endnote %}
-
-For actions, command templates are defined to format the outgoing MQTT payload to the device. When an action is executed, `value` can be used to generate the correct payload to the device.
-
-{% note %}
-
-**Example command template with JSON data:**
-
-With given value `21.9` template {% raw %}`{{ value }}`{% endraw %} renders to: `21.9`
-
-Additional the entity attributes `entity_id`, `name` and `this` can be used as variables in the template. The `this` attribute refers to the [entity state](/docs/configuration/state_object) of the entity.
-
-{% endnote %}
+{% include integrations/using_templates.md %}
 
 ## Binary sensor
 

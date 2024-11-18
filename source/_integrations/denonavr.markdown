@@ -95,6 +95,7 @@ Known supported devices:
 - Marantz SR5011
 - Marantz SR5015
 - Marantz SR6007 - SR6012
+- Marantz SR7005
 - Marantz SR7007
 - Marantz SR7010
 - Marantz SR7012
